@@ -4,6 +4,7 @@ $mt: (10, 20);
 $mr: (10, 20);
 $mb: (10, 20);
 $ml: (10, 20);
+$pt: (10, 80);
 @layer Layout.Space {
   @each $margin in $mt {
     .mt#{$margin} {
@@ -25,6 +26,11 @@ $ml: (10, 20);
   @each $margin in $ml {
     .ml#{$margin} {
       margin-left: rem($margin);
+    }
+  }
+  @each $padding in $pt {
+    .pt#{$padding} {
+      padding-top: rem($padding);
     }
   }
 }

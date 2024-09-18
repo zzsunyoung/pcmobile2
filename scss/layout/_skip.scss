@@ -1,0 +1,61 @@
+@use "../abstracts/" as *;
+@layer layout.skip {
+  .skip {
+    background-color: $neutral-07-100percent;
+    color: $white;
+    text-align: center;
+    padding: rem(8) 0;
+
+    &__ticket {
+      @include background("ico_ticket.svg", 0 0, null);
+      padding-left: rem(36);
+      display: inline-block;
+      line-height: rem(24);
+      font-weight: 600;
+      color: $white;
+      margin-right: rem(12);
+      font-size: rem(14);
+      @include mobile {
+        font-size: rem(12);
+        margin-right: 0;
+      }
+    }
+    &__link {
+      color: $yellow;
+      font-weight: 500;
+      font-size: rem(14);
+
+      border-bottom: 1px solid $yellow;
+      a {
+        &::after {
+          content: "";
+          display: inline-block;
+          width: rem(18);
+          height: rem(18);
+          padding-left: rem(4);
+          @include background("ico_yellow_arrow.svg", 100% rem(3), null);
+        }
+      }
+      @include mobile {
+        display: none;
+      }
+    }
+    &__close {
+      position: absolute;
+      right: rem(16);
+      top: rem(10);
+      width: rem(20);
+      height: rem(20);
+      @include background("ico_skip_close_black.svg", 0 0, null);
+      @include mobile {
+        position: relative;
+        width: rem(16);
+        height: rem(16);
+        margin-left: rem(12);
+        top: rem(5);
+        right: 0;
+        @include background("ico_skip_close_white.svg", 0 0, null);
+      }
+    }
+  }
+}

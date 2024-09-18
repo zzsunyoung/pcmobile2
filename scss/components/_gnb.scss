@@ -1,0 +1,18 @@
+@use "../abstracts/" as *;
+
+@layer Componets.gnb {
+  .gnb {
+    > ul {
+      display: flex;
+      gap: rem(40);
+      @include mobile {
+        display: none;
+      }
+      > li {
+        font-size: rem(14);
+        font-weight: 500;
+        color: $neutral-07-100percent;
+      }
+    }
+  }
+}

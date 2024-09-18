@@ -55,4 +55,39 @@ $buttonIcon: (
       @include buttonColor($buttonColor, $index);
     }
   }
+  .btn-search {
+    @include background("ico_search.svg", center, null, rem(24) rem(24));
+    display: inline-block;
+    width: rem(24);
+    height: rem(24);
+  }
+  .btn-user {
+    @include background("ico_user.svg", center, null, rem(24) rem(24));
+    display: inline-block;
+    width: rem(24);
+    height: rem(24);
+  }
+  .btn-bag {
+    @include background("ico_bag.svg", center, null, rem(24) rem(24));
+    display: inline-block;
+    width: rem(24);
+    height: rem(24);
+  }
+  .shoppingbag {
+    display: flex;
+    align-items: center;
+  }
+  .bag-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(20);
+    height: rem(20);
+    border-radius: 50%;
+    background-color: $neutral-07-100percent;
+    color: $white;
+    font-size: rem(12);
+    font-weight: 700;
+    line-height: rem(10);
+  }
 }

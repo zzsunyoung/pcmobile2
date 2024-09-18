@@ -1,5 +1,51 @@
 @use "../abstracts/" as *;
-@layer layout.Header {
+@use "../layout/align" as *;
+@layer Layout.Header {
   .header {
+    anchor-name: --header;
+    border-bottom: rem(1) solid $yellow;
+    background-color: $white;
+    background-color: rgba(255, 171, 0, 0.64);
+    padding: rem(18) 0;
+
+    @include mobile {
+      background-color: $yellow;
+      padding: rem(22) rem(32);
+    }
+    &__inner {
+      @extend .mxauto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: rem(14);
+    }
+    .utillity {
+      display: flex;
+      align-items: center;
+      gap: rem(16);
+      @include mobile {
+      }
+      .btn-search {
+        @include mobile {
+          display: block;
+          background-color: red;
+        }
+      }
+    }
+  }
+}
+@layer Popup.Header {
+  @include mobile {
+    body {
+      &:has(#sitemap:popover-open) .hader .btn-search {
+        display: none;
+      }
+      .header__inner {
+        ::before {
+          content: "";
+          width: rem(30);
+        }
+      }
+    }
   }
 }

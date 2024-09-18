@@ -4,27 +4,74 @@
   .footer {
     background: $neutral-07-100percent;
     color: $neutral-03-100percent;
+    box-sizing: border-box;
+
     @include mobile {
       width: 100%;
+      padding: rem(48) rem(26) rem(40) rem(27);
     }
     &__info {
       @extend .mxauto;
-      display: flex;
-      justify-content: space-between;
-      padding-top: rem(7);
-    }
-    &__logo {
       display: grid;
-      grid-template-columns: 1fr max-content;
-      gap: rem(30);
+      grid-template-columns: repeat(2, 1fr);
+      padding-top: rem(80);
+
+      @include mobile {
+        grid-template-columns: auto;
+      }
+    }
+    &__left {
+      display: flex;
       align-items: center;
+      @include mobile {
+        text-align: center;
+        flex-direction: column;
+      }
+      .logo {
+        display: grid;
+        grid-template-columns: auto;
+        gap: rem(30);
+        align-items: center;
+        margin-right: rem(40);
+        @include mobile {
+          display: block;
+          margin-right: 0;
+        }
+      }
       span {
         color: $neutral-03-100percent;
-        font-weight: 400;
-        font-size: rem(12);
+        font-size: rem(14);
+        position: relative;
+        &::before {
+          content: "";
+          background: #6c7275;
+          width: 24px;
+          height: 1px;
+          display: block;
+          position: absolute;
+          top: 16px;
+          left: rem(44);
+        }
+        @include mobile {
+          padding-top: rem(33);
+        }
       }
-      span::before {
-        @include bar(l, 1, 24, red, 32);
+    }
+    &__right {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      gap: rem(20);
+      li {
+        font-size: rem(14);
+        font-weight: 400;
+        @include mobile {
+          margin: 16px 0;
+        }
+      }
+      @include mobile {
+        display: block;
+        text-align: center;
       }
     }
     hr {
@@ -33,41 +80,51 @@
       opacity: 0.4;
     }
     &__link {
-      @extend .mxauto;
-      display: flex;
-      gap: rem(21);
-      flex-direction: row-reverse;
-      align-items: center;
-      font-weight: 400;
-      font-size: rem(14);
-      color: $neutral-01-100percent;
     }
     &__content {
       @extend .mxauto;
       display: flex;
       justify-content: space-between;
       padding: rem(16) 0 rem(52);
+      @include mobile {
+        flex-direction: column-reverse;
+        align-items: center;
+      }
     }
     &__sns {
       display: flex;
       gap: rem(12);
+      @include mobile {
+        margin: rem(8) 0 rem(24) 0;
+      }
     }
     &__copyright {
       display: flex;
       align-items: center;
+      @include mobile {
+        flex-direction: column-reverse;
+        align-items: center;
+      }
     }
     &__copy {
       font-weight: 400;
       color: $neutral-03-100percent;
       font-size: rem(14);
       margin-right: rem(14);
+      @include mobile {
+        font-size: rem(12);
+        margin-right: 0;
+      }
     }
     &__policy {
       font-weight: 600;
       color: $neutral-03-100percent;
       font-size: rem(14);
-      span {
+      a {
         margin-inline: rem(14);
+      }
+      @include mobile {
+        margin: rem(24) 0;
       }
     }
   }
